@@ -34,9 +34,19 @@ function renderTasks() {
 
 form.addEventListener('submit', (event) => {
   event.preventDefault();
+
   const text = input.value.trim();
-  if (!text) return;
-  tasks.push({ text, completed: false });
+
+  if (!text) {
+    alert('Please enter a task.');
+    return;
+  }
+
+  tasks.push({
+    text,
+    completed: false,
+  });
+
   input.value = '';
   renderTasks();
 });
